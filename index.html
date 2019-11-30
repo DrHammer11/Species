@@ -6,29 +6,62 @@
         <title>Different Species</title>
     </head>
     <body>
-        <DIV style="position: absolute; top:80px; left:525px"><h1>Killer Bunnies are Real!!!</h1></DIV><img src="images/IMG_0022.jpeg" alt="A female killer bunnie" style="position:absolute; TOP:0px; LEFT:0px; WIDTH:225px; HEIGHT:225px"><img src="images/IMG_0023.png" alt="An old killer bunnie" style="position:absolute; TOP:0px; LEFT:1200px; WIDTH:225px; HEIGHT:225px">
-        <DIV style="position: absolute; top:221px; left:0px"><nobr>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</nobr></DIV>
-        <nav><DIV style="position: absolute; top:230px; left:1200px"><pre>|          More reading<br>|<br>|<br>|       <a href="https://drhammer11.github.io/Species/" title="Different Species">Different Species</a><br>|<br>|<br>|       <a href="https://drhammer11.github.io/FunGuy/" title="Fun Guy">Fun Guy</a><br>|<br>|<br>|       <a href="https://drhammer11.github.io/Quacker/" title="Quacker">Quacker</a><br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br></pre></DIV></nav>
-        <main>
-            <DIV style="position: absolute; top:240px; left:600px"><h2>Different Species</h2></DIV>
-            <DIV style="position: absolute; top:300px; left:350px"><p>There are many different types of killer bunny, with these being the top 5 most common.</p>
-            <ol>
-                <li><b>Western Colar Bunny</b></li>
-            <p><nobr>The Western Colar Bunny is your average killer bunny, varying in size. These killer bunnys</nobr><br><nobr>like disguising themselves as little children, because children are fast.</nobr></p>
-                <li><b>Southern Colar Bunny</b></li>
-            <p><nobr>The smallest (but most durable) of the killer bunnies are the Southern Colar Bunnies. They are</nobr><br><nobr>often found assisting the quacker jacks and helping them get away with their newest invention.</nobr></p>
-                <li><b>Screaming Colar Bunny</b></li>
-            <p><nobr>The most vocal killer bunny, these killer bunnies disguise as small screaming children and scream</nobr><br><nobr>in your ear to divert your attention. Grandpa loves to hunt them down with his machine gun.</nobr></p>
-                <li><b>Boss Colar Bunny</b></li>
-            <p><nobr>Boss Colar Bunnys are big and strong, and they disguise themselves as police and supervisionades</nobr><br><nobr>so the other killer bunnies stay protected. The are also super fast.</nobr></p>
-                <li><b>Disco Colar Bunny</b></li>
-            <p><nobr>Disco Colar Bunnies are the most unusual of killer bunnies. All of the types of killer bunny turn</nobr><br><nobr>into Disco Colar Bunnies when they steal grandpa's things.</nobr></p>
-                <li><b>Baitless Colar Bunny</b></li>
-            <p><nobr>Baitless Colar Bunnies are the most intellegent killer bunny known, and they never fall for bait.</nobr><br><nobr>They always know a killer bunny trap when they see one, and they disguise as innocent little children.</nobr></p>
-            </ol>
-            </DIV>
-        </main>
+        <DIV style="position: absolute; top:80px; left:525px"><h1>Killer Bunnies are Real!!!</h1></DIV><img src="_images/IMG_0022.jpeg" alt="A female killer bunnie" style="position:absolute; TOP:0px; LEFT:0px; WIDTH:225px; HEIGHT:225px"><img src="_images/IMG_0023.png" alt="An old killer bunnie" style="position:absolute; TOP:0px; LEFT:1200px; WIDTH:225px; HEIGHT:225px">
+        <DIV style="position: absolute; top:221px; left:0px"><nobr>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</nobr></DIV><DIV style="position: absolute; top:230px; left:1200px"><pre>|          More reading<br>|<br>|<br>|       <a href="http://127.0.0.1:50315/Error.html" title="ERROR! Killer bunnies invaded!">Different Species</a><br>|<br>|<br>|       <a href="http://127.0.0.1:50315/Error.html" title="ERROR! Killer bunnies invaded!">Fun Guy</a><br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br></pre></DIV>
+        <DIV style="position: absolute; top:240px; left:600px"><h2>Different Species</h2></DIV>
+        <DIV style="position: absolute; top:300px; left:350px"><p>There are many different types of killer bunny, with these being the ones discovered so far.</p>
+        <ol id="numberList" style="width: 650px; word-wrap: break-word">
+        </ol>
+        <button type="button" onclick="askForBunny()">Add new Bunny</button>
+        </DIV>
         <a href="https://drhammer11.github.io/Virus/" title="Click here for a disco party!"><img src="images/IMG_0024.png" alt="A disco killer bunny" style="position:absolute; TOP:400px; WIDTH:225px; HEIGHT:225px"></a>
         <DIV style="position: absolute; top:625px; left:0px"><p>A Disco Colar Bunny in its natural habitat</p></DIV>
     </body>
+    <script>
+        //localStorage.clear();
+        if (window.localStorage.length === 0) {
+            bunnys = ["Western Colar Bunny", "Southern Colar Bunny","Screaming Colar Bunny","Boss Colar Bunny","Disco Colar Bunny"]
+            descs = ["The Western Colar Bunny is your average killer bunny, varying in size. These killer bunnys like disguising themselves as little children, because children are fast.","The smallest (but most durable) of the killer bunnies are the Southern Colar Bunnies. They are often found assisting the quackers and helping them get away with their newest invention.","The most vocal killer bunny, these killer bunnies disguise as small screaming children and scream in your ear to divert your attention. Grandpa loves to hunt them down with his machine gun.","Boss Colar Bunnys are big and strong, and they disguise themselves as police and supervisionades so the other killer bunnies stay protected. The are also super fast.","Disco Colar Bunnies are quite unusual, because all of the types of killer bunny turn into Disco Colar Bunnies when they steal grandpa's things."]
+        }
+        else {
+            data = loadData()
+            bunnys = data[0];
+            descs = data[1];
+        }
+        function loadData() {
+            dataArray = JSON.parse(localStorage.getItem("dataArray"));
+            return dataArray;
+        }
+        function UpdateData(newdata) {
+            localStorage.setItem("dataArray", JSON.stringify(newdata));
+        }
+        //UpdateData([bunnys, descs])
+        function addBunny(name, strDesc) {
+            bunnyArray = document.getElementById("numberList")
+            newBunny = document.createElement("li");
+            bunnyArray.appendChild(newBunny);
+            desc = document.createElement("p");
+            bunnyArray.appendChild(desc);
+            title = document.createElement("b");
+            newBunny.appendChild(title);
+            title.innerHTML = name;
+            desc.innerHTML = strDesc;
+        }
+        for (b = 0; b < bunnys.length; b++) {
+            addBunny(bunnys[b], descs[b])
+        }
+        function askForBunny() {
+            title = prompt("What is the name of the bunny?");
+            splitTitle = title.split(" ");
+            title = "";
+            for (w = 0; w < splitTitle.length; w++) {
+                title = title + splitTitle[w].slice(0, 1).toUpperCase() + splitTitle[w].slice(1).toLowerCase() + " ";
+            }
+            bunnys.push(title);
+            desc = prompt("Type a description for the bunny.");
+            descs.push(desc)
+            UpdateData([bunnys, descs])
+            addBunny(title, desc);
+        }
+    </script>
 </html>
