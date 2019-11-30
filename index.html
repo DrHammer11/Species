@@ -18,26 +18,26 @@
         <DIV style="position: absolute; top:625px; left:0px"><p>A Disco Colar Bunny in its natural habitat</p></DIV>
     </body>
     <script>
-        //localStorage.clear();
-        if (window.localStorage.length === 0) {
-            bunnys = ["Western Colar Bunny", "Southern Colar Bunny","Screaming Colar Bunny","Boss Colar Bunny","Disco Colar Bunny"]
-            descs = ["The Western Colar Bunny is your average killer bunny, varying in size. These killer bunnys like disguising themselves as little children, because children are fast.","The smallest (but most durable) of the killer bunnies are the Southern Colar Bunnies. They are often found assisting the quackers and helping them get away with their newest invention.","The most vocal killer bunny, these killer bunnies disguise as small screaming children and scream in your ear to divert your attention. Grandpa loves to hunt them down with his machine gun.","Boss Colar Bunnys are big and strong, and they disguise themselves as police and supervisionades so the other killer bunnies stay protected. The are also super fast.","Disco Colar Bunnies are quite unusual, because all of the types of killer bunny turn into Disco Colar Bunnies when they steal grandpa's things."]
-        }
-        else {
-            data = loadData()
-            bunnys = data[0];
-            descs = data[1];
-        }
-        function loadData() {
-            dataArray = JSON.parse(localStorage.getItem("dataArray"));
+        var bunnys = ["Western Colar Bunny", "Southern Colar Bunny","Screaming Colar Bunny","Boss Colar Bunny","Disco Colar Bunny"];
+        var descs = ["The Western Colar Bunny is your average killer bunny, varying in size. These killer bunnys like disguising themselves as little children, because children are fast.","The smallest (but most durable) of the killer bunnies are the Southern Colar Bunnies. They are often found assisting the quackers and helping them get away with their newest invention.","The most vocal killer bunny, these killer bunnies disguise as small screaming children and scream in your ear to divert your attention. Grandpa loves to hunt them down with his machine gun.","Boss Colar Bunnys are big and strong, and they disguise themselves as police and supervisionades so the other killer bunnies stay protected. The are also super fast.","Disco Colar Bunnies are quite unusual, because all of the types of killer bunny turn into Disco Colar Bunnies when they steal grandpa's things."];
+        data = loadData("bunnyThings");
+        bunnys = data[0];
+        descs = data[1];
+        function loadData(datakey) {
+            if (localStorage.getItem(datakey) === null) {
+                dataArray = [bunnys, descs];
+            }
+            else {
+                dataArray = JSON.parse(localStorage.getItem(datakey));
+            }
             return dataArray;
         }
-        function UpdateData(newdata) {
-            localStorage.setItem("dataArray", JSON.stringify(newdata));
+        function UpdateData(newdata, datakey) {
+            localStorage.setItem(datakey, JSON.stringify(newdata));
         }
-        UpdateData([bunnys, descs])
+        UpdateData([bunnys, descs], "bunnyThings");
         function addBunny(name, strDesc) {
-            bunnyArray = document.getElementById("numberList")
+            bunnyArray = document.getElementById("numberList");
             newBunny = document.createElement("li");
             bunnyArray.appendChild(newBunny);
             desc = document.createElement("p");
@@ -48,7 +48,7 @@
             desc.innerHTML = strDesc;
         }
         for (b = 0; b < bunnys.length; b++) {
-            addBunny(bunnys[b], descs[b])
+            addBunny(bunnys[b], descs[b]);
         }
         function askForBunny() {
             title = prompt("What is the name of the bunny?");
@@ -59,8 +59,8 @@
             }
             bunnys.push(title);
             desc = prompt("Type a description for the bunny.");
-            descs.push(desc)
-            UpdateData([bunnys, descs])
+            descs.push(desc);
+            UpdateData([bunnys, descs]);
             addBunny(title, desc);
         }
     </script>
